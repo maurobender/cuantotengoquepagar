@@ -3,9 +3,28 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.masterhead {
+	text-align: center;
+}
 
+.masterhead h1 {
+	font-size: 50px;
+}
 
+.masterhead p {
+	color: #AAA;
+}
 
+.form-container {
+	text-align: center;
+	margin: 25px 0;
+}
+
+div.inline {display: inline-block;}
+
+.control-group.inline {
+	margin: 0 10px;
+}
 
 
 

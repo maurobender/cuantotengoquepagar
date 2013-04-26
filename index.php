@@ -1,3 +1,22 @@
+<?php
+	$currencies = array('USD', 'GBP', 'EUR');
+	$rates = array();
+	ini_set('display_errors', true);
+	error_reporting(E_ALL);
+	
+	foreach($currencies as $currency) {
+		$url  = 'http://www.google.com/ig/calculator?hl=es&q=1' . $currency . '=?ARS';
+		$json = file_get_contents($url);
+		$json = preg_replace("/([a-zA-Z0-9_]+?):/" , "\"$1\":", $json);
+		$data = json_decode($json, true);
+		$out = array();
+		
+		preg_match('/([\d\.])+/', $data['rhs'], $out);
+		$rates[$currency] = (float) $out[0];
+	}
+	
+	$rates['ARS'] = 1;
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -6,7 +25,7 @@
 	 <head>
 		  <meta charset="utf-8">
 		  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		  <title></title>
+		  <title>¿Cuánto tengo que pagar?</title>
 		  <meta name="description" content="">
 		  <meta name="viewport" content="width=device-width">
 
@@ -27,7 +46,7 @@
 				<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		  <![endif]-->
 		  <div class="container">
-				<header class="center">
+				<header class="masterhead">
 					<h1>¿Cuánto tengo que pagar?</h1>
 					<p>
 						Una página para ayudarte a calcular cuánto terminarías pagando si
@@ -37,27 +56,39 @@
 
 				<!-- Example row of columns -->
 				<div class="row">
-					 <div class="span4">
-						  <h2>Heading</h2>
-						  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-						  <p><a class="btn" href="#">View details &raquo;</a></p>
+					 <div class="span12 form-container">
+						<form id="converter" class="form-inline">
+							<div class="control-group inline">
+								<label class="control-label">Monto:</label>
+								<input class="span4" placeholder="Ingrese el monto a calcular..." name="amount" type="text">
+							</div>
+							
+							<div class="control-group inline">
+								<label>Moneda:</label>
+								<select class="span2" name="currency">
+									<option value="USD">$ Dólares</option>
+									<option value="GBP">£ Libras</option>
+									<option value="EUR">€ Euros</option>
+								</select>
+							</div>
+							
+							<div class="control-group inline">
+								<button type="submit" class="btn">¡Calcular!</button>
+							</div>
+						</form>
 					 </div>
-					 <div class="span4">
-						  <h2>Heading</h2>
-						  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-						  <p><a class="btn" href="#">View details &raquo;</a></p>
+				</div>
+				
+				<div class="row">
+					<div id="result-container" style="display: none;">
+						<div id="result"></div>
 					</div>
-					 <div class="span4">
-						  <h2>Heading</h2>
-						  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-						  <p><a class="btn" href="#">View details &raquo;</a></p>
-					 </div>
 				</div>
 
 				<hr>
 
 				<footer>
-					 <p>&copy; Company 2012</p>
+					 <p>&copy; Mauro Bender 2013</p>
 				</footer>
 
 		  </div> <!-- /container -->
@@ -68,6 +99,7 @@
 		  <script src="js/vendor/bootstrap.min.js"></script>
 
 		  <script src="js/plugins.js"></script>
+		  <?php 	echo '<script>fx.rates = ' . json_encode($rates) . '; fx.base = "ARS";</script>'; ?>
 		  <script src="js/main.js"></script>
 
 		  <script>
