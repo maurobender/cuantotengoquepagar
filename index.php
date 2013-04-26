@@ -5,7 +5,7 @@
 	error_reporting(E_ALL);
 	
 	foreach($currencies as $currency) {
-		$url  = 'http://www.google.com/ig/calculator?hl=es&q=1' . $currency . '=?ARS';
+		$url  = 'http://www.google.com/ig/calculator?hl=es&q=1ARS=?' . $currency;
 		$json = file_get_contents($url);
 		$json = preg_replace("/([a-zA-Z0-9_]+?):/" , "\"$1\":", $json);
 		$data = json_decode($json, true);
@@ -81,7 +81,9 @@
 				
 				<div class="row">
 					<div id="result-container" style="display: none;">
+						<div class="result-title">Total a pagar</div>
 						<div id="result"></div>
+						<div class="result-info">Es el monto total a pagar en pesos con el impuesto del 20% ya sumado.</div>
 					</div>
 				</div>
 

@@ -26,6 +26,27 @@ div.inline {display: inline-block;}
 	margin: 0 10px;
 }
 
+#result-container {
+	width: 500px;
+	text-align: center;
+	margin: 10px auto;
+}
+
+.result-title {
+	font-size: 24px;
+	margin-bottom: 15px;
+}
+
+#result {
+	font-size: 34px;
+}
+
+.result-info {
+	font-size: 14px;
+	color: #AAA;
+	margin-top: 5px;
+}
+
 
 
 
