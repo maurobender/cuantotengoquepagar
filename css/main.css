@@ -39,15 +39,36 @@ div.inline {display: inline-block;}
 
 #result {
 	font-size: 34px;
+	font-weight: bold;
 }
 
-.result-info {
+.result-info-more {
+	margin-top: 10px;
+}
+
+#result-without-taxes,
+#result-taxes { font-weight: bold;}
+
+.result-info-text {
 	font-size: 14px;
 	color: #AAA;
 	margin-top: 5px;
 }
 
+.footer-left {float: left;}
+.footer-right {float: right;}
 
+.share-text {
+	display: inline-block;
+	position: relative;
+	top: -3px;
+	font-size: 18px;
+	margin-right: 10px;
+}
+
+.fb-like {
+	display: inline-block;
+}
 
 
 

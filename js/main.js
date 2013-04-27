@@ -47,6 +47,8 @@ jQuery(function($) {
 			};
 			
 			$('#result').text('$ ' + addCommas(result.with_taxes.toFixed(2)));
+			$('#result-without-taxes').text('$ ' + addCommas(result.without_taxes.toFixed(2)));
+			$('#result-taxes').text('$ ' + addCommas(result.taxes.toFixed(2)));
 			$('#result-container').fadeIn();
 		}
 	});
