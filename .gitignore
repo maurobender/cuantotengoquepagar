@@ -1,0 +1,19 @@
+# Ignoring backup files
+*~
+
+# Ignoring kdevelop4 project files
+*.kdev4
+
+# Ignoring vim restore files
+*.swp
+*.kate-swp
+
+# Ignoring kde4 .directory files
+.directory
+
+# Ignorign windows thumb files
+Thumbs.db
+
+# Ignoring build directories
+intermediate/
+publish/

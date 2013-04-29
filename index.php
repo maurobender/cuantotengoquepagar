@@ -30,11 +30,12 @@
 		<meta name="viewport" content="width=device-width">
 		  
 		<meta property="fb:app_id"  content="372983729485021" /> 
-		<meta property="og:url"     content="http://cuantotengoquepagar.com.ar" /> 
+		<meta property="og:url"     content="http://cuantotengoquepagar.com.ar" />
+		<meta property="og:type"   content="website" /> 
+		<meta property="og:image"    content="http://cuantotengoquepagar.com.ar/img/fb-image.png" /> 
 		<meta property="og:title"   content="¿Cuánto tengo que pagar?" /> 
-		<meta property="og:description" content="Un sitio desde dónde podrás calcular cuánto terminarías pagando si haces una compra en el exterior." /> 
-		<meta property="og:image"   content="https://fbcdn-dragon-a.akamaihd.net/cfs-ak-prn1/676529/837/471072486292602-/pecanpie.jpg" /> 
-		<meta property="og:locale"  content="es_AR" />
+		<meta property="og:description" content="Un sitio desde dónde podrás calcular cuánto terminarías pagando si haces una compra en el exterior desde Argentina." /> 
+		<meta property="og:locale"  content="es_LA" />
 		
 		  <link rel="stylesheet" href="css/bootstrap.min.css">
 		  <style>
@@ -57,7 +58,7 @@
 					<h1>¿Cuánto tengo que pagar?</h1>
 					<p>
 						Una página para ayudarte a calcular cuánto terminarías pagando si
-						haces una compra en el exterior.
+						haces una compra en el exterior desde Argentina.
 					</p>
 				</header>
 
@@ -87,7 +88,7 @@
 				</div>
 				
 				<div class="row">
-					<div id="result-container" style="display: none;">
+					<div id="result-container" class="span6 offset3" style="display: none;">
 						<div class="result-title">Total a pagar</div>
 						<div id="result"></div>
 						<div class="result-info-more">
@@ -102,7 +103,7 @@
 
 				<footer>
 					 <div class="footer-left">
-							<span class="share-text">¡Make it social!</span>
+							<span class="share-text">Make it social!</span>
 							
 							<!-- Facebook -->
 							<div class="fb-like" data-href="http://cuantotengoquepagar.com.ar" data-send="true" data-layout="button_count" data-width="200" data-show-faces="true"></div>
@@ -117,15 +118,18 @@
 				</footer>
 
 		  </div> <!-- /container -->
-
+		<a href="https://github.com/maurobender/cuantotengoquepagar" target="_blank" ><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
+		
+		 <!-- //-beg- concat_js -->
 		<script src="js/vendor/bootstrap.min.js"></script>
-
 		<script src="js/plugins.js"></script>
-		<?php 	echo '<script>fx.rates = ' . json_encode($rates) . '; fx.base = "ARS";</script>'; ?>
 		<script src="js/main.js"></script>
+		<!-- //-end- concat_js -->
+		
+		<?php 	echo '<script>fx.rates = ' . json_encode($rates) . '; fx.base = "ARS";</script>'; ?>
 
 		<script>
 			var _gaq=[['_setAccount','UA-36745878-2'],['_trackPageview']];
