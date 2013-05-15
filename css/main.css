@@ -5,6 +5,7 @@
    ========================================================================== */
 .masterhead {
 	text-align: center;
+	margin-bottom: 30px;
 }
 
 .masterhead h1 {
@@ -69,6 +70,7 @@ div.inline {display: inline-block;}
 	display: inline-block;
 }
 
+#ads-banner-container {margin-bottom: 30px;}
 
 
 

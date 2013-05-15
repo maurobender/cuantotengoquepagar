@@ -64,49 +64,103 @@
 				<header class="masterhead">
 					<h1>¿Cuánto tengo que pagar?</h1>
 					<p>
-						Una página para ayudarte a calcular cuánto terminarías pagando si
-						hacés una compra en el exterior desde Argentina.
+						Un conjunto de herramientas que te ayudará al momento de hacer las cuentas
+						cuando estés por hacer una compra en el exterior desde Argentina.
 					</p>
 				</header>
-
-				<!-- Example row of columns -->
-				<div class="row">
-					 <div class="span12 form-container">
-						<form id="converter" class="form-inline">
-							<div class="control-group inline">
-								<label class="control-label">Monto a pagar:</label>
-								<input class="span4" placeholder="Ingrese el monto a calcular..." name="amount" type="text">
-							</div>
-							
-							<div class="control-group inline">
-								<label>Moneda:</label>
-								<select class="span2" name="currency">
-									<option value="USD">$ Dólares</option>
-									<option value="GBP">£ Libras</option>
-									<option value="EUR">€ Euros</option>
-								</select>
-							</div>
-							
-							<div class="control-group inline">
-								<button type="submit" class="btn">¡Calcular!</button>
-							</div>
-						</form>
-					 </div>
-				</div>
 				
-				<div class="row">
-					<div id="result-container" class="span6 offset3" style="display: none;">
-						<div class="result-title">Total a pagar</div>
-						<div id="result"></div>
-						<div class="result-info-more">
-							Monto sin impuesto: <span id="result-without-taxes"></span>
-							+
-							Impuesto (20%): <span id="result-taxes"></span>
+				
+				<div class="tabbable span12"> 
+					<ul class="nav nav-tabs">
+						<li class="pull-right"><a href="#hasta-cuanto-puedo-gastar" data-toggle="tab">¿Hasta cuánto puedo gastar? <span class="label label-warning">¡Nuevo!</span></a></li>
+						<li class="active pull-right"><a href="#cuanto-tengo-que-pagar" data-toggle="tab">¿Cuánto tengo que pagar?</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="cuanto-tengo-que-pagar">
+							<div>
+								<h2>¿Cuánto tengo que pagar?</h2>
+								<p>Aquí puedes calcular cuánto terminarías pagando si hacés una compra en el exterior desde Argentina.</p>
+								
+								<div class="span12 form-container">
+									<form id="cuanto-tengo-que-pagar-form" class="form-inline">
+										<div class="control-group inline">
+											<label class="control-label">Monto a pagar:</label>
+											<input class="span4" placeholder="Ingrese el monto a calcular..." name="amount" type="text">
+										</div>
+										
+										<div class="control-group inline">
+											<label>A la moneda:</label>
+											<select class="span2" name="currency">
+												<option value="USD">$ Dólares</option>
+												<option value="GBP">£ Libras</option>
+												<option value="EUR">€ Euros</option>
+											</select>
+										</div>
+										
+										<div class="control-group inline">
+											<button type="submit" class="btn">¡Calcular!</button>
+										</div>
+									</form>
+								 </div>
+							</div>
+							
+							<div>
+								<div id="result-container" class="span6 offset3" style="display: none;">
+									<div class="result-title">Total a pagar</div>
+									<div id="result"></div>
+									<div class="result-info-more">
+										Monto sin impuesto: <span id="result-without-taxes"></span>
+										+
+										Impuesto (20%): <span id="result-taxes"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="tab-pane" id="hasta-cuanto-puedo-gastar">
+							<h2>¿Hasta cuánto puedo gastar?</h2>
+							<p>Cálcula cual sería el monto máximo que podrías gastar en la moneda extanjear gastar para no superar un máximo en pesos.</p>
+							
+							<div>
+								<div class="span12 form-container">
+									<form id="hasta-cuanto-puedo-gastar-form" class="form-inline">
+										<div class="control-group inline">
+											<label class="control-label">Máximo a gastar en pesos:</label>
+											<input class="span4" placeholder="Ingrese el monto a calcular..." name="amount" type="text">
+										</div>
+										
+										<div class="control-group inline">
+											<label>Moneda:</label>
+											<select class="span2" name="currency">
+												<option value="USD">$ Dólares</option>
+												<option value="GBP">£ Libras</option>
+												<option value="EUR">€ Euros</option>
+											</select>
+										</div>
+										
+										<div class="control-group inline">
+											<button type="submit" class="btn">¡Calcular!</button>
+										</div>
+									</form>
+								 </div>
+							</div>
+							
+							<div>
+								<div id="result-container" class="span6 offset3" style="display: none;">
+									<div class="result-title">Máximo a gastar</div>
+									<div id="result"></div>
+									<div class="result-info-more">
+										Monto sin impuesto: <span id="result-without-taxes"></span>
+										+
+										Impuesto (20%): <span id="result-taxes"></span>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				
-				<div class="row">
+
+				<div class="row clearfix">
 					<div class="span6 offset3" id="ads-banner-container">
 						<div style="width: 468px; margin: 0 auto;">
 							<!-- Soicos  - horizontal -->
