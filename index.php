@@ -89,7 +89,7 @@
 										</div>
 										
 										<div class="control-group inline">
-											<label>A la moneda:</label>
+											<label>Moneda:</label>
 											<select class="span2" name="currency">
 												<option value="USD">$ Dólares</option>
 												<option value="GBP">£ Libras</option>
@@ -119,18 +119,18 @@
 						
 						<div class="tab-pane" id="hasta-cuanto-puedo-gastar">
 							<h2>¿Hasta cuánto puedo gastar?</h2>
-							<p>Cálcula cual sería el monto máximo que podrías gastar en la moneda extanjear gastar para no superar un máximo en pesos.</p>
+							<p>Calcula cual sería el monto máximo que podrías gastar en la moneda extanjeara sin pasarte de cierta cantidad en pesos.</p>
 							
 							<div>
 								<div class="span12 form-container">
 									<form id="hasta-cuanto-puedo-gastar-form" class="form-inline">
 										<div class="control-group inline">
 											<label class="control-label">Máximo a gastar en pesos:</label>
-											<input class="span4" placeholder="Ingrese el monto a calcular..." name="amount" type="text">
+											<input class="span4" placeholder="Ingrese el monto máximo que piensa gastar..." name="amount" type="text">
 										</div>
 										
 										<div class="control-group inline">
-											<label>Moneda:</label>
+											<label>Calcular en:</label>
 											<select class="span2" name="currency">
 												<option value="USD">$ Dólares</option>
 												<option value="GBP">£ Libras</option>
@@ -151,7 +151,7 @@
 									<div id="result"></div>
 									<div class="result-info-more">
 										Monto sin impuesto: <span id="result-without-taxes"></span>
-										+
+										-
 										Impuesto (20%): <span id="result-taxes"></span>
 									</div>
 								</div>
