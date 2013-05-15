@@ -26,7 +26,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>¿Cuánto tengo que pagar?</title>
-		<meta name="description" content="">
+		<meta name="description" content="Un sitio desde dónde podrás calcular cuánto terminarías pagando si hacés una compra en el exterior desde Argentina.">
 		<meta name="viewport" content="width=device-width">
 		  
 		<meta property="fb:app_id"  content="372983729485021" /> 
@@ -34,7 +34,7 @@
 		<meta property="og:type"   content="website" /> 
 		<meta property="og:image"    content="http://cuantotengoquepagar.com.ar/img/fb-image.png" /> 
 		<meta property="og:title"   content="¿Cuánto tengo que pagar?" /> 
-		<meta property="og:description" content="Un sitio desde dónde podrás calcular cuánto terminarías pagando si haces una compra en el exterior desde Argentina." /> 
+		<meta property="og:description" content="Un sitio desde dónde podrás calcular cuánto terminarías pagando si hacés una compra en el exterior desde Argentina." /> 
 		<meta property="og:locale"  content="es_LA" />
 		
 		  <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -48,6 +48,13 @@
 		  <link rel="stylesheet" href="css/main.css">
 
 		  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		  
+		  <script>
+				var _gaq=[['_setAccount','UA-36745878-2'],['_trackPageview']];
+				(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+				g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+				s.parentNode.insertBefore(g,s)}(document,'script'));
+			</script>
 	 </head>
 	 <body>
 		  <!--[if lt IE 7]>
@@ -58,7 +65,7 @@
 					<h1>¿Cuánto tengo que pagar?</h1>
 					<p>
 						Una página para ayudarte a calcular cuánto terminarías pagando si
-						haces una compra en el exterior desde Argentina.
+						hacés una compra en el exterior desde Argentina.
 					</p>
 				</header>
 
@@ -98,6 +105,17 @@
 						</div>
 					</div>
 				</div>
+				
+				<div class="row">
+					<div class="span6 offset3" id="ads-banner-container">
+						<div style="width: 468px; margin: 0 auto;">
+							<!-- Soicos  - horizontal -->
+							<script type="text/javascript">
+								(function() {var _impid = 172080;var _pieceid = 7048;var _js = (("https:" == document.location.protocol) ? "https://" : "http://") + "soicos.com/srv.php?impid="+_impid+"&pieceid="+_pieceid+"&s=.js";document.write(unescape("%3Cscript src='" + _js + "' type='text/javascript'%3E%3C/script%3E"));})();
+							</script>
+						</div>
+					</div>
+				</div>
 
 				<hr>
 
@@ -109,7 +127,7 @@
 							<div class="fb-like" data-href="http://cuantotengoquepagar.com.ar" data-send="true" data-layout="button_count" data-width="200" data-show-faces="true"></div>
 							
 							<!-- Twitter -->
-							<a href="https://twitter.com/share" class="twitter-share-button" data-text="Averiguá cuánto es el total de tu compra en el exterior con el nuevo impuesto con ¿Cuánto tengo que pagar?." data-lang="es">Tweet</a>
+							<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-text="Averiguá cuánto es el total de tu compra en el exterior con el nuevo impuesto con ¿Cuánto tengo que pagar?." data-url="http://cuantotengoquepagar.com.ar/" data-lang="es">Tweet</a>
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 					 </div>
 					 <div class="footer-right">
@@ -118,7 +136,6 @@
 				</footer>
 
 		  </div> <!-- /container -->
-		<a href="https://github.com/maurobender/cuantotengoquepagar" target="_blank" ><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
@@ -130,14 +147,7 @@
 		<!-- //-end- concat_js -->
 		
 		<?php 	echo '<script>fx.rates = ' . json_encode($rates) . '; fx.base = "ARS";</script>'; ?>
-
-		<script>
-			var _gaq=[['_setAccount','UA-36745878-2'],['_trackPageview']];
-			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-			s.parentNode.insertBefore(g,s)}(document,'script'));
-		</script>
-
+		
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
 		  var js, fjs = d.getElementsByTagName(s)[0];

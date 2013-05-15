@@ -24,7 +24,10 @@ jQuery(function($) {
 	$('form#converter').submit(function(e) {
 		e.preventDefault();
 		
-		var amount = $(this).find('input[name=amount]').val();
+		if(_gaq)
+			_gaq.push(['_trackEvent', 'Calculadora', 'Calcular', 'Calcular el monto a pagar']);
+		
+		var amount = $(this).find('input[name=amount]').val().replace(/^\s+|\s+$/g, '');
 		var c_from = $(this).find('select[name=currency]').val();
 		var c_to   = 'ARS';
 		
@@ -32,6 +35,9 @@ jQuery(function($) {
 			$(this).find('input[name=amount]').closest('.control-group').addClass('error');
 		} else {
 			$(this).find('input[name=amount]').closest('.control-group').removeClass('error');
+			
+			if(_gaq)
+				_gaq.push(['_trackEvent', 'Calculadora', 'Cálculo en ' + c_from, 'La moneda en la que se realizó el cálculo.']);
 			
 			var result = fx(amount).from(c_from).to(c_to);
 			
@@ -45,6 +51,9 @@ jQuery(function($) {
 				with_taxes    : rounded + taxes,
 				taxes         : taxes
 			};
+			
+			if(_gaq)
+				_gaq.push(['_trackEvent', 'Calculadora', 'Cálculo exitoso', 'Se ha podido realizar el cálculo con éxito.']);
 			
 			$('#result').text('$ ' + addCommas(result.with_taxes.toFixed(2)));
 			$('#result-without-taxes').text('$ ' + addCommas(result.without_taxes.toFixed(2)));
